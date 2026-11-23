@@ -1,0 +1,37 @@
+/* Small additions on top of css/hagiazo.css (the reference site's compiled Tailwind). */
+[hidden] { display: none !important; }
+
+/* Hero arch cards: a tapped card widens; a second tap opens its detail. */
+.hero-card.is-open { flex: 2.4 1 0% !important; }
+@media (min-width: 1024px) { .hero-card.is-open { flex: 1.6 1 0% !important; } }
+.hero-dot.is-active { background-color: #0a0a0a; width: 1.25rem; }
+
+/* Comparison table sort state */
+th[aria-sort="ascending"] button, th[aria-sort="descending"] button { color: #0a0a0a; }
+th[aria-sort="ascending"] svg, th[aria-sort="descending"] svg { opacity: 1; }
+
+/* Modal scroll lock */
+body.modal-open { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-card img, .hero-card, .faq-chevron { transition: none !important; }
+}
+
+/* Utilities used by the leasing pages that the reference bundle did not include */
+.h-56 { height: 14rem; }
+.mt-6 { margin-top: 1.5rem; }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bg-\[\#F6F5F2\]\/60 { background-color: rgba(246, 245, 242, 0.6); }
+@media (min-width: 40rem) {
+  .sm\:h-64 { height: 16rem; }
+  .sm\:flex-1 { flex: 1; }
+}
+
+/* Entrance animations (tailwindcss-animate names used in the markup) */
+@keyframes hz-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hz-slide-top { from { opacity: 0; transform: translateY(-0.5rem); } to { opacity: 1; transform: none; } }
+@keyframes hz-zoom { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: none; } }
+.animate-in.fade-in { animation: hz-fade-in 0.2s ease-out both; }
+.animate-in.slide-in-from-top-2 { animation: hz-slide-top 0.2s ease-out both; }
+.animate-in.zoom-in-95 { animation: hz-zoom 0.2s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .animate-in { animation: none !important; } }

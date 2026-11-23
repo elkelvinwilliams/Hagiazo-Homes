@@ -1,0 +1,11 @@
+{
+  "name": "hagiazo-homes",
+  "version": "1.0.0",
+  "description": "Hagiazo Homes — UK residential leasing and lettings. Static site.",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.cjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "license": "UNLICENSED"
+}
